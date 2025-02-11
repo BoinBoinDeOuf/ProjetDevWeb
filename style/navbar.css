@@ -1,0 +1,54 @@
+/*navbar.css : Styles relatifs au menu de navigation.*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #454545;
+    padding: 15px;
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-links a:hover {
+    color: #ff9800;
+}
+
+a.pageActive {
+    color: #b19cd8;
+}
+
+/* Style du menu burger */
+.burger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}

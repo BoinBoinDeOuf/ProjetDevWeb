@@ -1,0 +1,58 @@
+/*responsive.css : Media queries pour un design responsive.*/
+
+/* Responsive : Empile les éléments sur petits écrans */
+@media screen and (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .sectionRecherche input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sectionRecherche button {
+        width: 100%;
+    }
+
+    .search-content h2 {
+        font-size: 20px;
+    }
+}
+
+/* Responsive pour la navigation */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px;
+    }
+
+    .burger {
+        display: block;
+    }
+}
