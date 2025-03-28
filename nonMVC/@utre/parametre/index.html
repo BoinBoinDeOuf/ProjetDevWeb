@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibilité - Daltonisme, Dyslexie & Langue</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Accessibilité : Daltonisme & Dyslexie</h1>
+
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="toggleDaltonien">
+                <span class="slider round"></span>
+            </label>
+            <span id="labelDaltonien">Mode Daltonien</span>
+        </div>
+
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="toggleDyslexie">
+                <span class="slider round"></span>
+            </label>
+            <span id="labelDyslexie">Mode Dyslexie</span>
+        </div>
+
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="toggleLangue">
+                <span class="slider round"></span>
+            </label>
+            <span id="labelLangue">Langue : Français</span>
+        </div>
+    </header>
+
+    <main>
+        <p id="content">Ce texte est un exemple pour tester les modes d'accessibilité.</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
