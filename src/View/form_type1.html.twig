@@ -1,0 +1,29 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Trouve ton stage{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Choix de formulaire</title>
+</head>
+<body>
+    <form action="inscription.php" method="POST">
+    <input type="hidden" name="compte" value="type1">
+    <label>Email : <input type="email" name="email" required></label>
+    <label>Password : <input type="password" name="password" required></label>
+    <label>Téléphone : <input type="phone" name="telephone" required></label>
+    <label>Nom : <input type="text" name="nom" required></label>
+    <label>Prenom : <input type="text" name="prenom" required></label>
+    <label>Campus : <input type="text" name="campus" required></label>
+    <label>Date de naissance : <input type="date" name="date_naissance" required></label>
+    <button type="submit">Valider</button>
+</form>
+</body>
+</html>
+
+{% endblock %}

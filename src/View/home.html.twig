@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Trouve ton stage{% endblock %}
+
+{% block content %}
+<div class="sectionRecherche">
+    <div class="search-content">
+        <h1>Recherchez votre stage facilement !</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Rechercher une annonce !" id="recherche">
+            <button id="BtRecherche">🔍</button>
+        </div>
+    </div>
+</div>
+
+ 
+<h1>Offres de Stage</h1>
+<div class="offres">
+        {% for offre in offres %}
+<div class="offre">
+<h2>{{ offre.titre }}</h2>
+<h3>{{ offre.nom_entreprise }}</h3>
+<p>{{ offre.description }}</p>
+<p>Lieu: {{ offre.nom_localisation }}</p>
+<p>Rémunération: {{ offre.remuneration }}€</p>
+<a href="postuler.php?id={{ offre.id_offre }}">Postuler</a>
+</div>
+        {% endfor %}
+</div>
+ 
+    <!-- Pagination -->
+<div class="pagination">
+        {% if page > 1 %}
+<a href="?page={{ page - 1 }}" class="prev">Précédent</a>
+        {% endif %}
+ 
+        {% for i in 1..totalPages %}
+<a href="?page={{ i }}" class="{% if i == page %}active{% endif %}">{{ i }}</a>
+        {% endfor %}
+ 
+        {% if page < totalPages %}
+<a href="?page={{ page + 1 }}" class="next">Suivant</a>
+        {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+
+<!-- src/View/base.html.twig -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Trouve ton stage{% endblock %}</title>
+
+    <!--
+
+    <link rel="stylesheet" href="../../public/assets/css/navbar.css">
+    <link rel="stylesheet" href="../../public/assets/css/reset.css">
+    <link rel="stylesheet" href="../../public/assets/css/responsive.css">
+    <link rel="stylesheet" href="../../public/assets/css/section.css">
+    <link rel="stylesheet" href="../../public/assets/css/footer.css">
+       -->
+
+
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/section.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.php">
+                <img src="assets/images/logo.png" alt="Logo du site">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="?uri=index" class="{% if app.request.pathinfo == '/index.php' %}pageActive{% endif %}">Accueil</a></li>
+            <li><a href="#" class="{% if app.request.pathinfo == '/contact' %}pageActive{% endif %}">Contact</a></li>
+            {% if isLoggedIn %}
+                <li><a href="?logout=true" class="{% if app.request.pathinfo == '/logout' %}pageActive{% endif %}">Déconnexion</a></li>
+                <li><a href="#" class="{% if app.request.pathinfo == '/profil' %}pageActive{% endif %}">Mon profil</a></li>
+            {% else %}
+                <li><a href="?uri=connexion" class="{% if app.request.pathinfo == '/connexion' %}pageActive{% endif %}">Connexion</a></li>
+                <li><a href="index.php?uri=inscription" class="{% if app.request.pathinfo == '/inscription' %}pageActive{% endif %}">Inscription</a></li>
+            {% endif %}
+            <li><a href="#" class="{% if app.request.pathinfo == '/parametres' %}pageActive{% endif %}">Paramètres</a></li>
+        </ul>
+
+        
+        <div class="burger">
+            ☰
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+    <button id="BtnToTop" title="Retour en haut">↑</button>
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="?uri=mentions_legales" class="{% if app.request.pathinfo == '/mentions_legales.php' %}pageActive{% endif %}">Mentions légales</a></li>
+                <li><a href="#" class="{% if app.request.pathinfo == '/politique_confidentialite' %}pageActive{% endif %}">Politique de confidentialité</a></li>
+            </ul>
+
+        </div>
+    <p class="copyright">© 2025 Mon Site. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
