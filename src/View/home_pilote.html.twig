@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Trouve ton stage{% endblock %}
+
+{% block content %}
+
+  <div class="sectionRecherche">
+    <div class="search-content">
+        <h1>Recherchez votre stage facilement !</h1>
+        <div class="search-container">
+            <a href="/stages" class="button" id="BtRecherche">Rechercher offre🔍</a>
+            <a href="/stages/add" class="button" id="BtRecherche">Rechercher étudiants</a>
+            <a href="/stages/edit" class="button" id="BtRecherche">Offre postulée</a>
+            <a href="/stages/delete" class="button" id="BtRecherche">Wish list</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,7 +1,7 @@
 
 /*-----accueil.html-----*/
 .sectionRecherche{
-    background: url('../image/page_accueil.jpg') no-repeat center center/cover;
+    background: url('../public/assets/images/page_accueil.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +46,7 @@
     outline: none;
     font-size: 16px;
 }
-.sectionRecherche button {
+.sectionRecherche a {
     background-color: #b19cd8;
     color: white;
     border: none;
@@ -56,8 +56,9 @@
     cursor: pointer;
     font-size: 16px;
     transition: background 0.3s ease, transform 0.2s;
+    text-decoration: none;
 }
-.sectionRecherche button:hover {
+.sectionRecherche a:hover {
     background-color: #ff9800;
     transform: scale(1.1);
 }
@@ -108,4 +109,155 @@
 .legal-section p span {
     display: block;
     margin-bottom: 5px;
+}
+
+
+
+
+
+.container-ci {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50%;
+    margin: auto; /* Centre horizontalement */
+    margin: 50px auto;
+
+
+}
+
+.container-ci a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #b19cd8;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.container-ci a:hover {
+    background-color: #ff9800;
+}
+
+
+.container-ci label {
+    display: block;
+    margin-top: 10px;
+    color: #333333;
+}
+.container-ci input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+.container-ci button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #b19cd8;
+
+    transition: background-color 0.3s;
+}
+.container-ci button:hover {
+    background-color: #ff9800;
+}
+
+.form-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px; /* Espace entre les éléments */
+}
+
+.form-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-link img {
+    max-width: 100px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+.step {
+    display: none;
+}
+.active {
+    display: block;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    
+
+}
+
+/* Style des cartes */
+.card {
+    background: white;
+    border: 2px solid #f4a261;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* Titre */
+.card h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Paragraphe */
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Effet au survol */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Trouve ton stage{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Choix de formulaire</title>
+</head>
+<body>
+<div class="container-ci">
+    <h1>S'identifier</h1>
+    <form action="../src/Controller/ConnexionController.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    </div>
+    
+</body>
+</html>
+
+{% endblock %}

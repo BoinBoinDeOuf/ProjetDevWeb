@@ -7,16 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Trouve ton stage{% endblock %}</title>
 
-    <!--
-
-    <link rel="stylesheet" href="../../public/assets/css/navbar.css">
-    <link rel="stylesheet" href="../../public/assets/css/reset.css">
-    <link rel="stylesheet" href="../../public/assets/css/responsive.css">
-    <link rel="stylesheet" href="../../public/assets/css/section.css">
-    <link rel="stylesheet" href="../../public/assets/css/footer.css">
-       -->
-
-
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -30,18 +20,24 @@
                 <img src="assets/images/logo.png" alt="Logo du site">
             </a>
         </div>
+
         <ul class="nav-links">
-            <li><a href="?uri=index" class="{% if app.request.pathinfo == '/index.php' %}pageActive{% endif %}">Accueil</a></li>
+            <li><a href="index.php?uri=index" class="{% if app.request.pathinfo == '/index.php' %}pageActive{% endif %}">Accueil</a></li>
             <li><a href="#" class="{% if app.request.pathinfo == '/contact' %}pageActive{% endif %}">Contact</a></li>
-            {% if isLoggedIn %}
-                <li><a href="?logout=true" class="{% if app.request.pathinfo == '/logout' %}pageActive{% endif %}">Déconnexion</a></li>
-                <li><a href="#" class="{% if app.request.pathinfo == '/profil' %}pageActive{% endif %}">Mon profil</a></li>
+            {% if loggedin %}
+                <li><a href="?uri=deconnexion" class="{% if app.request.pathinfo == '/logout' %}pageActive{% endif %}">Déconnexion</a></li>
+                <li><a href="?uri=monprofil" class="{% if app.request.pathinfo == '/profil' %}pageActive{% endif %}">Mon profil</a></li>
             {% else %}
-                <li><a href="?uri=connexion" class="{% if app.request.pathinfo == '/connexion' %}pageActive{% endif %}">Connexion</a></li>
-                <li><a href="?uri=inscription" class="{% if app.request.pathinfo == '/inscription' %}pageActive{% endif %}">Inscription</a></li>
+                <li><a href="index.php?uri=connexion" class="{% if app.request.pathinfo == '/connexion' %}pageActive{% endif %}">Connexion</a></li>
+                <li><a href="index.php?uri=inscription" class="{% if app.request.pathinfo == '/inscription' %}pageActive{% endif %}">Inscription</a></li>
             {% endif %}
             <li><a href="#" class="{% if app.request.pathinfo == '/parametres' %}pageActive{% endif %}">Paramètres</a></li>
         </ul>
+
+
+
+
+
 
         
         <div class="burger">

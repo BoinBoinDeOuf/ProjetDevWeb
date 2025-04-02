@@ -1,4 +1,16 @@
 <?php
+require '../vendor/autoload.php';
+//require_once 'Controller/InscriptionController.php';
+//require_once 'Model/InscriptionModel.php';
+require_once '../config/database.php';
+
+use App\Controller\InscriptionController;
+use App\Model\InscriptionModel;
+
+$model = new InscriptionModel($pdo); // Crée une instance du modèle
+$controller = new InscriptionController($model); // Passe l'instance au constructeur
+
+
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

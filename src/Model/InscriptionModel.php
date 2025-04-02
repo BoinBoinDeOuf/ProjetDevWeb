@@ -1,7 +1,11 @@
 <?php
 // models/Model.php
 
-class Model {
+namespace App\Model;
+
+
+
+class InscriptionModel {
     private $pdo;
 
     public function __construct($pdo) {

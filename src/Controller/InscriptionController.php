@@ -1,23 +1,30 @@
 <?php
 // controllers/Controller.php
+namespace App\Controller;
 
-class Controller {
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+use App\Model\InscriptionModel; // Assure-toi que le chemin est correct
+
+class InscriptionController {
     private $model;
+    private $twig;
 
-    public function __construct($model) {
-        $this->model = $model;
+    public function __construct(InscriptionModel $model) {
+        $this->model = $model; // Assigne l'objet modèle
+        $loader = new FilesystemLoader('../src/View');
+        $this->twig = new Environment($loader);
     }
 
     public function vueForm1(){
-        echo "Fct1";
-
+        echo $this->twig->render('form_type1.html.twig');
     }
     public function vueForm2(){
-        echo "Fct2";
-        
+        echo $this->twig->render('form_type2.html.twig');
+
     }
     public function vueForm3(){
-        echo "Fct3";
+        echo $this->twig->render('form_type3.html.twig');
 
         
     }
@@ -32,7 +39,8 @@ class Controller {
             $date_naissance = $_POST['date_naissance'];
             $campus = $_POST['campus'];
             $this->model->registerStudent($email, $password, $tel, $nom, $prenom, $date_naissance, $campus);
-            echo "Données du formulaire 1 enregistrées avec succès!";
+            header('Location: ../public/index.php');
+            //echo "Données du formulaire 1 enregistrées avec succès!";
         }
     }
 
@@ -45,7 +53,8 @@ class Controller {
             $prenom = $_POST['prenom'];
             $campus = $_POST['campus'];
             $this->model->registerPilote($email, $password, $tel, $nom, $prenom, $campus);
-            echo "Données du formulaire 2 enregistrées avec succès!";
+            header('Location: ../../public/index.php?uri=index');
+            //echo "Données du formulaire 2 enregistrées avec succès!";
         }
     }
 
@@ -60,8 +69,10 @@ class Controller {
             $description = $_POST['description'];
             $num_siret = $_POST['num_siret'];
             $this->model->registerCompany($email, $password, $tel, $nom, $prenom, $nomEnt, $description, $num_siret);
-            echo "Données du formulaire 3 enregistrées avec succès!";
+            header('Location: ../../public/index.php?uri=index');
+            //echo "Données du formulaire 3 enregistrées avec succès!";
         }
+
     }
 }
 ?>

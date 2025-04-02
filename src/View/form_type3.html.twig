@@ -1,12 +1,47 @@
-<form action="index.php" method="POST">
-    <input type="hidden" name="compte" value="type3">
-    <label>Email : <input type="email" name="email" required></label>
-    <label>Password : <input type="password" name="password" required></label>
-    <label>Téléphone : <input type="phone" name="telephone" required></label>
-    <label>Nom : <input type="text" name="nom" required></label>
-    <label>Prenom : <input type="text" name="prenom" required></label>
-    <label>Nom entreprise : <input type="text" name="nomEnt" required></label>
-    <label>Description : <input type="textarea" name="description" required></label>
-    <label>Numéro SIRET : <input type="text" name="num_siret" required></label>
-    <button type="submit">Valider</button>
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Trouve ton stage{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Choix de formulaire</title>
+</head>
+<body>
+    <div class="container-ci">
+        <form action="inscription.php" method="POST">
+            <input type="hidden" name="compte" value="type3">
+
+            <div class="step active">
+                <label>Email : <input type="email" name="email" required></label>
+                <label>Password : <input type="password" name="password" required></label>
+                <button type="button" onclick="nextStep()">Suivant</button>
+            </div>
+
+            <div class="step">
+                <label>Nom : <input type="text" name="nom" required></label>
+                <label>Prenom : <input type="text" name="prenom" required></label>
+                <label>Téléphone : <input type="phone" name="telephone" required></label>
+                <button type="button" onclick="nextStep()">Suivant</button>
+            </div>
+            <div class="step">
+                <label>Nom entreprise : <input type="text" name="nomEnt" required></label>
+                <label>Description : <input type="textarea" name="description" required></label>
+                <label>Numéro SIRET : <input type="text" name="num_siret" required></label>
+                <button type="submit">Valider</button>
+            </div>
+            
+        </form>
+    </div>
+    <script src="assets/js/form1.js"></script>
+    
+    
 </form>
+</body>
+</html>
+
+{% endblock %}

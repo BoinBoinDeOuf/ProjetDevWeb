@@ -4,7 +4,6 @@
 namespace App\Model;
 require_once 'database.php';
 
-
 class HomeModel{
     private $pdo;
 
